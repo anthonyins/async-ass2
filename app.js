@@ -111,3 +111,8 @@ const renderCountry = (country) => {
 </div>
   `;
 };
+document.addEventListener("keydown", (e) => {
+if (e.keyCode === 123) {
+    e.preventDefault()
+  }
+});
