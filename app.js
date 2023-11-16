@@ -2,7 +2,7 @@ const searchInput = document.querySelector("#search");
 const searchDiv = document.querySelector("#searchDiv");
 
 let countries = [];
-const getData = async (country) => {
+const getData = async () => {
   try {
     const res = await fetch(`https://restcountries.com/v3.1/all`);
     if (!res.ok) {
@@ -11,6 +11,7 @@ const getData = async (country) => {
     }
     const data = await res.json();
     countries = data;
+    renderCountry(data[0])
   } catch (error) {
     console.log(error);
   }
